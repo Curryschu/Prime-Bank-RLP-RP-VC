@@ -27,6 +27,7 @@ app = Flask(
     __name__,
     template_folder="primebank/templates",
     static_folder="primebank/static"
+)
 
 app.secret_key = APP_SECRET
 app.config.update(
