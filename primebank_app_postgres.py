@@ -23,7 +23,11 @@ DISCORD_REDIRECT_URI = os.environ.get("DISCORD_REDIRECT_URI", "")
 ADMIN_IDS = {x.strip() for x in os.environ.get("ADMIN_DISCORD_IDS", "").split(",") if x.strip()}
 CURRENCY = os.environ.get("CURRENCY_NAME", "Night-Dollar")
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="primebank/templates",
+    static_folder="primebank/static"
+
 app.secret_key = APP_SECRET
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
